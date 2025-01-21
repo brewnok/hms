@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOM F1R1</title>
+    <style>
+        .rectangle {
+            border: 1px solid black;
+            margin: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            width: 500px;
+        }
+
+        .rectangle > h3 {
+            margin-top: 0;
+        }
+
+        .input-box {
+            margin-bottom: 10px;
+        }
+
+        .input-box label {
+            display: block;
+        }
+
+        .input-box input,
+        .input-box select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .mandatory {
+            color: red;
+        }
+
+        .button {
+            margin-top: 10px;
+        }
+
+        .big-button {
+            width: 100%;
+            height: 50px;
+            margin: 10px;
+        }
+        
+        body {
+            font-family: Arial;
+        }
+
+        .backhome {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      <a class="backhome" href="index.html">Home</a>
+      
+      <div class="rectangle">
+            <h3>Personal Information</h3>
+            <form id="personalInfoForm">
+                <div class="input-box">
+                    <label for="name">Name: <span class="mandatory">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-box">
+                    <label for="adults">Number of Adults: <span class="mandatory">*</span></label>
+                    <input type="number" id="adults" name="adults" required>
+                </div>
+                <div class="input-box">
+                    <label for="date">Date: <span class="mandatory">*</span></label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </div>
+    
+        <div class="rectangle">
+            <h3>Restaurant Service</h3>
+            <form id="restaurantForm">
+                <div class="input-box">
+                    <label for="itemName">Item Name: <span class="mandatory">*</span></label>
+                    <input type="text" id="itemName" name="itemName" required>
+                </div>
+                <div class="input-box">
+                    <label for="quantity">Quantity: <span class="mandatory">*</span></label>
+                    <input type="number" id="quantity" name="quantity" required>
+                </div>
+                <div class="input-box">
+                    <label for="totalPrice">Total Price: <span class="mandatory">*</span></label>
+                    <input type="number" id="totalPrice" name="totalPrice" required>
+                </div>
+                <div class="input-box">
+                    <label for="serviceDate">Date: <span class="mandatory">*</span></label>
+                    <input type="date" id="serviceDate" name="serviceDate" required>
+                </div>
+                <button type="button" class="button" onclick="addRestaurantItem()">+</button>
+            </form>
+            
+            <table id="restaurantTable">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="rectangle">
+            <h3>Water</h3>
+            <form id="waterForm">
+                <div class="input-box">
+                    <label for="waterQuantity">Quantity: <span class="mandatory">*</span></label>
+                    <input type="number" id="waterQuantity" name="waterQuantity" required>
+                </div>
+                <div class="input-box">
+                    <label for="waterPrice">Total Price: <span class="mandatory">*</span></label>
+                    <input type="number" id="waterPrice" name="waterPrice" required>
+                </div>
+                <div class="input-box">
+                    <label for="waterDate">Date: <span class="mandatory">*</span></label>
+                    <input type="date" id="waterDate" name="waterDate" required>
+                </div>
+                <button type="button" class="button" onclick="addWaterItem()">+</button>
+            </form>
+
+            <table id="waterTable">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="rectangle">
+            <h3>Laundry</h3>
+            <form id="laundryForm">
+                <div class="input-box">
+                    <label for="laundryQuantity">Quantity: <span class="mandatory">*</span></label>
+                    <input type="number" id="laundryQuantity" name="laundryQuantity" required>
+                </div>
+                <div class="input-box">
+                    <label for="laundryPrice">Total Price: <span class="mandatory">*</span></label>
+                    <input type="number" id="laundryPrice" name="laundryPrice" required>
+                </div>
+                <div class="input-box">
+                    <label for="laundryDate">Date: <span class="mandatory">*</span></label>
+                    <input type="date" id="laundryDate" name="laundryDate" required>
+                </div>
+                <button type="button" class="button" onclick="addLaundryItem()">+</button>
+            </form>
+
+            <table id="laundryTable">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rectangle">
+            <button type="button" class="big-button">Check-in</button>
+            <button type="button" class="big-button" disabled>Check-out</button>
+        </div>
+
+    </div>
+
+    <script>
+        function addRestaurantItem() {
+            var itemName = document.getElementById("itemName").value;
+            var quantity = document.getElementById("quantity").value;
+            var totalPrice = document.getElementById("totalPrice").value;
+            var serviceDate = document.getElementById("serviceDate").value;
+
+            var table = document.getElementById("restaurantTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+            
+            newRow.innerHTML = `<td>${itemName}</td><td>${quantity}</td><td>${totalPrice}</td><td>${serviceDate}</td>`;
+          
+            document.getElementById("itemName").value = '';
+            document.getElementById("quantity").value = '';
+            document.getElementById("totalPrice").value = '';
+            document.getElementById("serviceDate").value = '';
+        }
+
+        function addWaterItem() {
+            var quantity = document.getElementById("waterQuantity").value;
+            var totalPrice = document.getElementById("waterPrice").value;
+            var date = document.getElementById("waterDate").value;
+
+            var table = document.getElementById("waterTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+
+            newRow.innerHTML = `<td>${quantity}</td><td>${totalPrice}</td><td>${date}</td>`;
+
+            document.getElementById("waterQuantity").value = '';
+            document.getElementById("waterPrice").value = '';
+            document.getElementById("waterDate").value = '';
+        }
+
+        function addLaundryItem() {
+            var quantity = document.getElementById("laundryQuantity").value;
+            var totalPrice = document.getElementById("laundryPrice").value;
+            var date = document.getElementById("laundryDate").value;
+
+            var table = document.getElementById("laundryTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+
+            newRow.innerHTML = `<td>${quantity}</td><td>${totalPrice}</td><td>${date}</td>`;
+
+            document.getElementById("laundryQuantity").value = '';
+            document.getElementById("laundryPrice").value = '';
+            document.getElementById("laundryDate").value = '';
+        }
+
+        document.getElementById('personalInfoForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form Submitted!');
+        });
+    </script>
+</body>
+</html>
