@@ -1,0 +1,95 @@
+.rectangle {
+      border: 1px solid black;
+      margin: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+      width: 500px;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .rectangle > h3 {
+      margin-top: 0;
+    }
+
+    .input-box {
+      margin-bottom: 10px;
+    }
+
+    .input-box label {
+      display: block;
+    }
+
+    .input-box input,
+    .input-box select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    .mandatory {
+      color: red;
+    }
+
+    .button {
+      margin-top: 10px;
+    }
+
+    .big-button {
+      width: 900px;
+      height: 50px;
+      margin: 10px;
+      font-size: 1.5em;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      font-family: Arial;
+      font-size: 0.8em;
+    }
+
+    .backhome {
+      margin: 10px;
+      padding: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: center;
+    }
+
+    .checkbtn {
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      width: 900px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #submitBtnPersonalDetails {
+      font-size: 1.1em;
+      font-family: Arial, Helvetica, sans-serif;
+      padding-right: 10px;
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-weight: bold;
+    }

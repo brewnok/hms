@@ -1,0 +1,53 @@
+.rectangle {
+      text-align: center;
+      width: 700px;
+      height: 400px;
+      border: 2px solid black;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 10px;
+      box-sizing: border-box;
+      align-items: center;
+    }
+
+    .square1
+  {
+      width: 90px;
+      height: 90px;
+      border: 1px solid black;
+      margin: 20px;
+      display: flex;
+      justify-content: center; /* Horizontally center the text */
+      align-items: center;
+      font-family: Arial;
+      font-weight: bold;
+    }
+    .parent {
+      padding: 100px;
+    }
+
+    .square1 {
+      background-color: rgb(105, 255, 105);
+    }
+  
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .room {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      color: white;
+      text-align: center;
+      font-size: 1.5em;
+      line-height: 100px;
+      cursor: pointer;
+    }
+    
+  
+    .room.color {
+      background-color: green;
+    }
+    
